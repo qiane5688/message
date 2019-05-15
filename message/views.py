@@ -20,3 +20,8 @@ class MessageCreate(CreateView):
     fields = '__all__'          # 顯示 *所有* 欄位
     success_url = '/message/'   # 新增成功後，導向留言列表頁面
     # 未指定 template_name 屬性，預設使用 message/message_form.html
+
+class MessageDelete(DeleteView):
+    model = Message
+    success_url = '/message'
+    template_name = 'confirm_delete.html'
